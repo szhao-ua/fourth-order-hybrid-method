@@ -64,8 +64,6 @@ The following dependencies are required to run the project:
 
 - **`fft2d.f90`** and **`fft.f`**: Fortran subroutines for numerical computations.
 - **`mymodule`**: Python module wrapping the Fortran subroutines.
-- **`poisson_solver.py`**: Main Python script implementing the hybrid method.
-- **`README.md`**: This documentation file.
 
 ---
 
