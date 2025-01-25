@@ -73,7 +73,7 @@ The following dependencies are required to run the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/
+   git clone https://github.com/szhao-ua/corrected-hybrid-method git
    cd corrected-hybrid-method
 
 2. Compile the Fortran subroutines using f2py:
