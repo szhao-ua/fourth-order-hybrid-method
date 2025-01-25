@@ -3,7 +3,7 @@
 
 
 
-## Project Overview
+## Overview
 This project focuses on solving the Poisson interface problem described by the following partial differential equation (PDE):
 
 $$
