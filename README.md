@@ -40,11 +40,9 @@ where $$\( [\![u(\mathbf{x})]\!] \) $$ and $$\( [\![u_n(\mathbf{x})]\!] \)$$ rep
    - The finite difference method enforces the governing equation in each subdomain.
    - Achieves **fourth-order accuracy** for the solution and its derivatives.
 
-2. **Interface Handling**:
-   - The interface \(\Gamma\) is implicitly represented using level set methods.
-   - The hybrid method effectively captures the jump discontinuities.
 
-3. **Fortran Integration**:
+
+2. **Fortran Integration**:
    - Utilizes Fortran subroutines (`fft2d.f90` and `fft.f`) for efficient numerical computations.
    - The Fortran code is imported into Python as a module (`mymodule`).
 
