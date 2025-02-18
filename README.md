@@ -5,10 +5,10 @@
 
 ## Overview
 
-A new high-order neural network and corrected finite-difference hybrid method is developed for solving the Poisson equation in regular domains with embedded irregular interfaces exhibiting jump discontinuities. Standard fourth-order finite difference discretization becomes invalid near such interfaces due to the discontinuities and requires corrections based on Cartesian derivative jumps. Traditional numerical methods rely on additional treatments to approximate these derivative jumps, which can complicate implementation and struggle with geometric singularities.
-In this work, machine learning techniques are utilized to address these challenges.  A neural network, trained with the given jump conditions, predicts these Cartesian derivative jumps, while the corrected Laplacian discretization is employed to directly solve the Poisson equation with the associated boundary conditions, including corner treatments. This hybrid method is both easy to implement and efficient. Numerical experiments in two and three dimensions demonstrate that the method achieves fourth-order accuracy for the solution and its derivatives. Moreover, the method is comparable in performance to the augmented matched interface and boundary method (AMIB).
-This project focuses on solving the Poisson interface problem described by the following partial differential equation (PDE):
+A new high-order hybrid method integrating neural networks and corrected finite differences  is developed for solving elliptic equations with irregular interfaces and discontinuous solutions. Standard fourth-order finite difference discretization becomes invalid near such interfaces due to the discontinuities and requires corrections based on Cartesian derivative jumps. In traditional numerical methods, such as the augmented matched interface and boundary (AMIB) method, these derivative jumps can be reconstructed via additional approximations and are solved together with the unknown solution in an iterative procedure. Nontrivial developments have been carried out in the AMIB method in treating sharply curved interfaces, which, however, may not work for interfaces with geometric singularities. In this work, machine learning techniques are utilized to directly predict these Cartesian derivative jumps without involving the unknown solution. To this end, physics-informed neural networks (PINNs) are trained to satisfy the jump conditions for both closed and open interfaces with possible geometric singularities. The predicted Cartesian derivative jumps can then be integrated in the corrected finite differences. The resulted discrete Laplacian can be efficiently solved by fast Poisson solvers, such as fast Fourier transform (FFT) and geometric multigrid methods, over a rectangular domain with Dirichlet boundary conditions. This hybrid method is both easy to implement and efficient. Numerical experiments in two and three dimensions demonstrate that the method achieves fourth-order accuracy for the solution and its derivatives.
+
 <!--
+This project focuses on solving the Poisson interface problem described by the following partial differential equation (PDE):
 $$
 \Delta u(\mathbf{x}) + \lambda(\mathbf{x}) u(\mathbf{x}) = f(\mathbf{x}), \quad \mathbf{x} \in \Omega^- \cup \Omega^+,
 $$
@@ -25,7 +25,7 @@ $$
 \Omega = \Omega^{+} \cup \Omega^{-},
 $$
 
-separated by an embedded interface $$\ \Gamma \$$. 
+separated by an interface $$\ \Gamma \$$. 
 The solution in each subdomain is denoted by $$\ u^{+} \$$ and $$\ u^{-} \$$, while the source terms are $$\ f^{+} \$$ and $$\ f^{-} \$$.
 
 Across the interface $$\ \Gamma \$$, the solution exhibits jump discontinuities governed by the following conditions:
@@ -72,8 +72,8 @@ The following dependencies are required to run the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/szhao-ua/corrected-hybrid-method.git
-   cd corrected-hybrid-method
+   git clone https://github.com/szhao-ua/fourth-order-hybrid-method.git
+   cd fourth-order-hybrid-method
 
 2. Compile the Fortran subroutines using f2py:
    ```bash
