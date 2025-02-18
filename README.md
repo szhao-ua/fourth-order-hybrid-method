@@ -1,4 +1,4 @@
-# corrected-hybrid-method
+# fourth-order-hybrid-method
 
 
 
