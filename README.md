@@ -36,6 +36,9 @@ $$
 
 where $$\( [\![u(\mathbf{x})]\!] \) $$ and $$\( [\![u_n(\mathbf{x})]\!] \)$$ represent the jump in the function and its normal derivative, respectively.-->
 
+Please cite the following when using this package in a publication:
+Y. Ren and S. Zhao, A high-order hybrid approach integrating neural networks and fast Poisson solvers for elliptic interface problems, Computation, 13, 83, (2025).
+
 ## Features
 
 1. **Hybrid Neural Network and Finite Difference Method**:
